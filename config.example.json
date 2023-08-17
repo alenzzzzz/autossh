@@ -6,19 +6,19 @@
   "servers": [
     {
       "name": "work",
-      "ip": "172.96.172.246",
+      "ip": "127.0.0.1",
       "port": 22,
       "user": "root",
       "method": "key",
-      "key": "~/az-vspace/ssh/id_rsa"
+      "key": "~/example/ssh/id_rsa"
     },
     {
       "name": "proxy",
-      "ip": "188.166.255.120",
+      "ip": "127.0.0.1",
       "port": 22,
       "user": "root",
       "method": "key",
-      "key": "~/az-vspace/ssh/id_rsa"
+      "key": "~/example/ssh/id_rsa"
     }
   ]
 }
