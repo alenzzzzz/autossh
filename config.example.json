@@ -5,44 +5,20 @@
   },
   "servers": [
     {
-      "name": "example-password",
-      "ip": "example-password",
+      "name": "work",
+      "ip": "172.96.172.246",
       "port": 22,
-      "user": "example-password",
-      "password": "example-password",
-      "method": "example-password",
-      "key": "",
-      "options": {
-        "ServerAliveInterval": 20
-      },
-      "alias": "example"
+      "user": "root",
+      "method": "key",
+      "key": "~/az-vspace/ssh/id_rsa"
     },
     {
-      "name": "example-key",
-      "ip": "example-key",
-      "user": "example-key",
-      "method": "key"
-    }
-  ],
-  "groups": [
-    {
-      "group_name": "your group name",
-      "prefix": "a",
-      "servers": [
-        {
-          "name": "example1",
-          "ip": "example1",
-          "user": "example1",
-          "password": "example1"
-        },
-        {
-          "name": "example2",
-          "ip": "example2",
-          "user": "example2",
-          "password": "example2"
-        }
-      ],
-      "collapse": false
+      "name": "proxy",
+      "ip": "188.166.255.120",
+      "port": 22,
+      "user": "root",
+      "method": "key",
+      "key": "~/az-vspace/ssh/id_rsa"
     }
   ]
 }

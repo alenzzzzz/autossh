@@ -2,8 +2,7 @@ package app
 
 import (
 	"flag"
-	"os"
-	"path/filepath"
+	"log"
 )
 
 var (
@@ -18,9 +17,6 @@ var (
 )
 
 func init() {
-	// 取执行文件所在目录下的config.json
-	dir, _ := os.Executable()
-	c = filepath.Dir(dir) + "/config.json"
 
 	flag.StringVar(&c, "c", c, "指定配置文件路径")
 	flag.StringVar(&c, "config", c, "指定配置文件路径")
@@ -44,6 +40,10 @@ func init() {
 		default:
 			defaultServer = arg
 		}
+	}
+
+	if c == "" {
+		log.Fatal("Need to specify the config.json path, -c config.json")
 	}
 }
 

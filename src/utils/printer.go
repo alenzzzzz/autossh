@@ -17,7 +17,7 @@ func Log(a ...interface{}) {
 // 打印一行信息
 // 字体颜色为绿色
 func Infoln(a ...interface{}) {
-	fmt.Print("\033[32m")
+	fmt.Print("\033[36m")
 	Logln(a...)
 	fmt.Print("\033[0m")
 }
@@ -25,8 +25,8 @@ func Infoln(a ...interface{}) {
 // 打印信息（不换行）
 // 字体颜色为绿色
 func Info(a ...interface{}) {
-	fmt.Print("\033[32m")
-	Logln(a...)
+	fmt.Print("\033[36m")
+	Log(a...)
 	fmt.Print("\033[0m")
 }
 

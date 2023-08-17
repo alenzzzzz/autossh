@@ -4,10 +4,6 @@ import (
 	"autossh/src/utils"
 	"errors"
 	"fmt"
-	"github.com/pkg/sftp"
-	"golang.org/x/crypto/ssh"
-	"golang.org/x/crypto/ssh/terminal"
-	"golang.org/x/net/proxy"
 	"io/ioutil"
 	"net"
 	"os"
@@ -16,6 +12,11 @@ import (
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/pkg/sftp"
+	"golang.org/x/crypto/ssh"
+	"golang.org/x/crypto/ssh/terminal"
+	"golang.org/x/net/proxy"
 )
 
 type Server struct {
@@ -73,9 +74,9 @@ func (server *Server) FormatPrint(flag string, ShowDetail bool) string {
 	}
 
 	if ShowDetail {
-		return " [" + flag + alias + "]" + "\t" + server.Name + " [" + server.User + "@" + server.Ip + "]"
+		return " [" + flag + alias + "] " + server.Name + " [" + server.User + "@" + server.Ip + "]"
 	} else {
-		return " [" + flag + alias + "]" + "\t" + server.Name
+		return " [" + flag + alias + "] " + server.Name
 	}
 }
 

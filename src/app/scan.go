@@ -2,6 +2,8 @@ package app
 
 import (
 	"autossh/src/utils"
+	"os"
+	"os/exec"
 	"strings"
 )
 
@@ -36,7 +38,10 @@ func scanInput(cfg *Config) (loop bool, clear bool, reload bool) {
 	case InputCmdServer:
 		{
 			server := cfg.serverIndex[cmd].server
-			utils.Infoln("你选择了", server.Name)
+			cmd := exec.Command("clear")
+			cmd.Stdout = os.Stdout
+			cmd.Run()
+			utils.Infoln("try to connect...")
 			err := server.Connect()
 			if err != nil {
 				utils.Logger.Error("server connect error ", err)
